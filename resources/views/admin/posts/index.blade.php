@@ -20,7 +20,7 @@
                 <td>{{$post->category->name}}</td>
                 <td></td>
                 <td class="d-flex">
-                    <a href="#" class="btn btn-primary">SHOW</a>
+                    <a href="{{route ('admin.posts.show', $post)}}" class="btn btn-primary">SHOW</a>
                     <a href="#" class="btn btn-warning mx-1">MODIFY</a>
                     <form action="#"
                     method="post">

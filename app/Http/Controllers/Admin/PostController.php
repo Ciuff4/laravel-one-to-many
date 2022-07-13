@@ -50,7 +50,9 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post=Post::find($id);
+        // $categories=Category::all();
+        return view('admin.posts.show', compact('post'));
     }
 
     /**

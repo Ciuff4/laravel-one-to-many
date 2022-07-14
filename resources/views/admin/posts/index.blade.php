@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<a href="{{route ('admin.posts.create')}}" class="btn btn-success">CREATE NEW POST</a>
 <div>
     <table class="table">
         <thead>
@@ -21,12 +22,12 @@
                 <td></td>
                 <td class="d-flex">
                     <a href="{{route ('admin.posts.show', $post)}}" class="btn btn-primary">SHOW</a>
-                    <a href="#" class="btn btn-warning mx-1">MODIFY</a>
-                    <form action="#"
-                    method="post">
+                    <a href="{{route ('admin.posts.edit', $post)}}" class="btn btn-warning mx-1">MODIFY</a>
+                    <form action="{{route('admin.posts.destroy',$post)}}"
+                    method="POST"
+                    onsubmit="return confirm('Confermi di eliminare il Post {{ $post->nome }}?')">
                     @csrf
                     @method('DELETE')
-
                         <button type="sumbit" class="btn btn-danger">DELETE</button>
                     </form>
                 </td>
